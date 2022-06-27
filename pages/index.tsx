@@ -32,11 +32,14 @@ const Home: NextPage = () => {
   ]
 
   return (
-    <main className="container mx-auto px-4 py-5">
-      <ul className="flex flex-col flex-wrap gap-y-12 gap-x-8 lg:grid-flow-col lg:flex-row 2xl:grid 2xl:grid-cols-4 2xl:grid-rows-4">
+    <main className="container mx-auto py-5">
+      <ul className="flex flex-col flex-wrap justify-center gap-1 align-top md:grid-flow-col md:flex-row 2xl:grid 2xl:grid-cols-4 2xl:grid-rows-4">
         {equips.map((equip) => (
-          <li key={equip.name} className="flex flex-col items-center gap-6">
-            <p className="text-xl font-medium text-black dark:text-white">
+          <li
+            key={equip.name}
+            className="flex flex-col gap-6 rounded-xl px-6 py-4 hover:bg-white hover:shadow-lg hover:dark:bg-neutral-800 hover:dark:shadow-neutral-800/50"
+          >
+            <p className="text-center text-xl font-medium text-black dark:text-white">
               {equip.name}
             </p>
             <Image src={equip.image} alt={equip.name} />
