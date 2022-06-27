@@ -1,43 +1,45 @@
 import type { NextPage } from 'next'
+import Image, { StaticImageData } from 'next/image'
+import { images } from '../public/img'
 
 interface Equip {
   name: string
-  image: string
+  image: StaticImageData
 }
 
 const Home: NextPage = () => {
   const equips: Equip[] = [
-    { name: 'Ring 1', image: '/img/ring0.png' },
-    { name: 'Ring 2', image: '/img/ring1.png' },
-    { name: 'Ring 3', image: '/img/ring2.png' },
-    { name: 'Ring 4', image: '/img/ring3.png' },
-    { name: 'Pendant 1', image: '/img/pendant0.png' },
-    { name: 'Pendant 2', image: '/img/pendant1.png' },
-    { name: 'Weapon', image: '/img/weapon.png' },
-    { name: 'Belt', image: '/img/belt.png' },
-    { name: 'Hat', image: '/img/hat.png' },
-    { name: 'Top', image: '/img/top.png' },
-    { name: 'Bottom', image: '/img/bottom.png' },
-    { name: 'Shoe', image: '/img/shoe.png' },
-    { name: 'Face', image: '/img/face.png' },
-    { name: 'Eye', image: '/img/eye.png' },
-    { name: 'Shoulder', image: '/img/shoulder.png' },
-    { name: 'Glove', image: '/img/glove.png' },
-    { name: 'Emblem', image: '/img/emblem.png' },
-    { name: 'Earring', image: '/img/earring.png' },
-    { name: 'Secondary', image: '/img/secondary.png' },
-    { name: 'Cape', image: '/img/cape.png' },
+    { name: 'Ring 1', image: images.ring0 },
+    { name: 'Ring 2', image: images.ring1 },
+    { name: 'Ring 3', image: images.ring2 },
+    { name: 'Ring 4', image: images.ring3 },
+    { name: 'Pendant 1', image: images.pendant0 },
+    { name: 'Pendant 2', image: images.pendant1 },
+    { name: 'Weapon', image: images.weapon },
+    { name: 'Belt', image: images.belt },
+    { name: 'Hat', image: images.hat },
+    { name: 'Top', image: images.top },
+    { name: 'Bottom', image: images.bottom },
+    { name: 'Shoe', image: images.shoe },
+    { name: 'Face', image: images.face },
+    { name: 'Eye', image: images.eye },
+    { name: 'Shoulder', image: images.shoulder },
+    { name: 'Glove', image: images.glove },
+    { name: 'Emblem', image: images.emblem },
+    { name: 'Earring', image: images.earring },
+    { name: 'Secondary', image: images.secondary },
+    { name: 'Cape', image: images.cape },
   ]
 
   return (
     <main className="container mx-auto px-4 py-5">
-      <ul className="grid grid-flow-col grid-cols-5 grid-rows-4 gap-8">
+      <ul className="flex flex-col flex-wrap gap-y-12 gap-x-8 lg:grid-flow-col lg:flex-row 2xl:grid 2xl:grid-cols-4 2xl:grid-rows-4">
         {equips.map((equip) => (
-          <li key={equip.name} className="flex flex-col items-center gap-4">
+          <li key={equip.name} className="flex flex-col items-center gap-6">
             <p className="text-xl font-medium text-black dark:text-white">
               {equip.name}
             </p>
-            <img src={equip.image} alt={equip.name} />
+            <Image src={equip.image} alt={equip.name} />
           </li>
         ))}
       </ul>
