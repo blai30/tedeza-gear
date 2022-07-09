@@ -1,6 +1,9 @@
 import type { NextPage } from 'next'
 import Image, { StaticImageData } from 'next/image'
+import { format, formatDistanceToNow } from 'date-fns'
 import { images } from '../public/img'
+import { Octokit } from 'octokit'
+import { useEffect, useState } from 'react'
 
 interface Equip {
   name: string
@@ -8,6 +11,8 @@ interface Equip {
 }
 
 const Home: NextPage = () => {
+  const [updatedDate, setupdatedDate] = useState<Date>()
+
   const equips: Equip[] = [
     { name: 'Ring 1', image: images.ring0 },
     { name: 'Ring 2', image: images.ring1 },
@@ -31,8 +36,33 @@ const Home: NextPage = () => {
     { name: 'Cape', image: images.cape },
   ]
 
+  useEffect(() => {
+    const fetchCommit = async () => {
+      const octokit = new Octokit()
+      const latestCommit = await octokit.rest.repos.getCommit({
+        owner: 'blai30',
+        repo: 'tedeza-gear',
+        ref: 'main',
+      })
+
+      if (latestCommit.data.commit.committer?.date) {
+        setupdatedDate(new Date(latestCommit.data.commit.committer.date))
+      }
+    }
+
+    fetchCommit()
+  }, [])
+
   return (
     <main className="container mx-auto py-5">
+      <div className="p-6 space-y-2">
+        <h3 className="text-center text-2xl font-bold text-neutral-600 dark:text-neutral-300">
+          Updated {updatedDate ? formatDistanceToNow(updatedDate) : "..."} ago
+        </h3>
+        <h3 className="text-center text-neutral-600 dark:text-neutral-300">
+          {updatedDate ? format(updatedDate, 'yyyy-MM-dd HH:mm a') : "..."}
+        </h3>
+      </div>
       <ul className="flex flex-col flex-wrap justify-center gap-1 align-top md:grid-flow-col md:flex-row 2xl:grid 2xl:grid-cols-4 2xl:grid-rows-4">
         {equips.map((equip) => (
           <li
