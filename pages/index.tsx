@@ -138,6 +138,7 @@ const Home: NextPage = () => {
                 layout="fixed"
                 loader={({ src, quality }) => `${src}?q=${quality || 100}`}
                 placeholder="blur"
+                priority={true}
               />
             )}
           </li>
