@@ -28,7 +28,7 @@ const equips: Equip[] = [
 
   { name: 'Hat', image: images.hat },
   { name: 'Face', image: images.face, alt: [images.face_0, null] },
-  { name: 'Eye', image: images.eye },
+  { name: 'Eye', image: images.eye, alt: [images.eye, null] },
   { name: 'Top', image: images.top },
   { name: 'Bottom', image: images.bottom },
 
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
                   checked
                     ? 'bg-neutral-700 text-white dark:bg-neutral-300 dark:text-black'
                     : 'border-gray-200 bg-white text-gray-900 hover:bg-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:text-gray-100 dark:hover:bg-neutral-700',
-                  'flex select-none items-center justify-center border py-3 px-6 text-sm font-medium uppercase first:rounded-t-md first:border-b-0 last:rounded-b-md last:border-t-0 sm:flex-1 sm:first:rounded-l-md sm:first:rounded-r-none sm:first:border-r-0 sm:first:border-b sm:last:rounded-r-md sm:last:rounded-l-none sm:last:border-l-0 sm:last:border-t'
+                  'flex select-none items-center justify-center border py-3 px-6 text-sm font-medium uppercase transition first:rounded-t-md first:border-b-0 last:rounded-b-md last:border-t-0 sm:flex-1 sm:first:rounded-l-md sm:first:rounded-r-none sm:first:border-r-0 sm:first:border-b sm:last:rounded-r-md sm:last:rounded-l-none sm:last:border-l-0 sm:last:border-t'
                 )
               }
             >
@@ -114,7 +114,14 @@ const Home: NextPage = () => {
         {equips.map((equip) => (
           <li
             key={equip.name}
-            className="flex flex-col gap-6 rounded-xl px-6 py-4"
+            className={classNames(
+              preset.index === 1 && equip.alt && equip.alt[0]
+                ? 'bg-yellow-400/40 dark:bg-yellow-600/30'
+                : preset.index === 2 && equip.alt && equip.alt[1]
+                ? 'bg-green-400/40 dark:bg-green-600/30'
+                : '',
+              'flex flex-col gap-6 rounded-xl px-5 py-4 transition-colors'
+            )}
           >
             <p className="text-center text-xl font-medium text-black dark:text-white">
               {equip.name}
@@ -124,14 +131,10 @@ const Home: NextPage = () => {
                 src={
                   preset.index === 0
                     ? equip.image
-                    : preset.index === 1
-                    ? equip.alt && equip.alt[0]
-                      ? equip.alt[0]
-                      : equip.image
-                    : preset.index === 2
-                    ? equip.alt && equip.alt[1]
-                      ? equip.alt[1]
-                      : equip.image
+                    : preset.index === 1 && equip.alt && equip.alt[0]
+                    ? equip.alt[0]
+                    : preset.index === 2 && equip.alt && equip.alt[1]
+                    ? equip.alt[1]
                     : equip.image
                 }
                 alt={equip.name}
