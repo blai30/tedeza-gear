@@ -31,8 +31,12 @@ import ring0_1 from './ring0_1.png'
 import ring1_0 from './ring1_0.png'
 import ring3_0 from './ring3_0.png'
 import ring3_1 from './ring3_1.png'
+import pendant0_1 from './pendant0_1.png'
 import pendant1_1 from './pendant1_1.png'
 import face_0 from './face_0.png'
+import face_1 from './face_1.png'
+import eye_0 from './eye_0.png'
+import eye_1 from './eye_1.png'
 
 export const images = {
   ring0,
@@ -68,6 +72,10 @@ export const images = {
   ring1_0,
   ring3_0,
   ring3_1,
+  pendant0_1,
   pendant1_1,
   face_0,
+  face_1,
+  eye_0,
+  eye_1,
 }

@@ -16,23 +16,23 @@ interface Equip {
 const equips: Equip[] = [
   { name: 'Ring 1', image: images.ring0, alt: [null, images.ring0_1] },
   { name: 'Ring 2', image: images.ring1, alt: [images.ring1_0, null] },
-  { name: 'Ring 3', image: images.ring2 },
+  { name: 'Ring 3', image: images.ring2, alt: [images.ring2, null] },
   { name: 'Ring 4', image: images.ring3, alt: [images.ring3_0, images.ring3_1] },
   { name: 'Pocket', image: images.pocket },
 
-  { name: 'Pendant 1', image: images.pendant0 },
+  { name: 'Pendant 1', image: images.pendant0, alt: [null, images.pendant0_1] },
   { name: 'Pendant 2', image: images.pendant1, alt: [null, images.pendant1_1] },
   { name: 'Weapon', image: images.weapon },
   { name: 'Belt', image: images.belt },
   { name: 'Medal', image: images.medal },
 
   { name: 'Hat', image: images.hat },
-  { name: 'Face', image: images.face, alt: [images.face_0, null] },
-  { name: 'Eye', image: images.eye, alt: [images.eye, null] },
+  { name: 'Face', image: images.face, alt: [images.face_0, images.face_1] },
+  { name: 'Eye', image: images.eye, alt: [null, images.eye_1] },
   { name: 'Top', image: images.top },
   { name: 'Bottom', image: images.bottom },
 
-  { name: 'Earring', image: images.earring },
+  { name: 'Earring', image: images.earring, alt: [images.earring, null] },
   { name: 'Shoulder', image: images.shoulder },
   { name: 'Glove', image: images.glove },
   { name: 'Cape', image: images.cape },
