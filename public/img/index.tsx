@@ -37,6 +37,7 @@ import face_0 from './face_0.png'
 import face_1 from './face_1.png'
 import eye_0 from './eye_0.png'
 import eye_1 from './eye_1.png'
+import earring_0 from './earring_0.png'
 
 export const images = {
   ring0,
@@ -78,4 +79,5 @@ export const images = {
   face_1,
   eye_0,
   eye_1,
+  earring_0,
 }

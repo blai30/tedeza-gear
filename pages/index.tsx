@@ -32,7 +32,7 @@ const equips: Equip[] = [
   { name: 'Top', image: images.top },
   { name: 'Bottom', image: images.bottom },
 
-  { name: 'Earring', image: images.earring, alt: [images.earring, null] },
+  { name: 'Earring', image: images.earring, alt: [images.earring_0, null] },
   { name: 'Shoulder', image: images.shoulder },
   { name: 'Glove', image: images.glove },
   { name: 'Cape', image: images.cape },
