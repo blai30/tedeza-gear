@@ -21,14 +21,14 @@ class MyDocument extends Document {
           <meta
             key="description"
             name="description"
-            content="Maplestory Reboot gear for Tedeza."
+            content="MapleStory Reboot gear for Tedeza."
           />
 
           {/* Open Graph. */}
           <meta
             key="og:description"
             property="og:description"
-            content="Maplestory Reboot gear for Tedeza."
+            content="MapleStory Reboot gear for Tedeza."
           />
           <meta
             key="og:site_name"
@@ -47,7 +47,7 @@ class MyDocument extends Document {
           <meta
             key="twitter:description"
             property="twitter:description"
-            content="Maplestory Reboot gear for Tedeza."
+            content="MapleStory Reboot gear for Tedeza."
           />
           <meta key="twitter:card" name="twitter:card" content="summary" />
 
