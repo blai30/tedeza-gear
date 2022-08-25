@@ -14,25 +14,25 @@ interface Equip {
 
 // prettier-ignore
 const equips: Equip[] = [
-  { name: 'Ring 1', image: images.ring0, alt: [null, images.ring0_1] },
-  { name: 'Ring 2', image: images.ring1, alt: [images.ring1_0, null] },
-  { name: 'Ring 3', image: images.ring2, alt: [images.ring2, null] },
-  { name: 'Ring 4', image: images.ring3, alt: [images.ring3_0, images.ring3_1] },
+  { name: 'Ring 4', image: images.ring4, alt: [null, images.ring4_drop] },
+  { name: 'Ring 3', image: images.ring3, alt: [images.ring3_meso, images.ring3_drop] },
+  { name: 'Ring 2', image: images.ring2, alt: [images.ring2_meso, images.ring2_drop] },
+  { name: 'Ring 1', image: images.ring1, alt: [images.ring1_meso, images.ring1_drop] },
   { name: 'Pocket', image: images.pocket },
 
-  { name: 'Pendant 1', image: images.pendant0, alt: [null, images.pendant0_1] },
-  { name: 'Pendant 2', image: images.pendant1, alt: [null, images.pendant1_1] },
+  { name: 'Pendant 2', image: images.pendant2, alt: [null, images.pendant2_drop] },
+  { name: 'Pendant 1', image: images.pendant1, alt: [null, images.pendant1_drop] },
   { name: 'Weapon', image: images.weapon },
   { name: 'Belt', image: images.belt },
   { name: 'Medal', image: images.medal },
 
   { name: 'Hat', image: images.hat },
-  { name: 'Face', image: images.face, alt: [images.face_0, images.face_1] },
-  { name: 'Eye', image: images.eye, alt: [null, images.eye_1] },
+  { name: 'Face', image: images.face, alt: [images.face_meso, images.face_drop] },
+  { name: 'Eye', image: images.eye, alt: [null, images.eye_drop] },
   { name: 'Top', image: images.top },
   { name: 'Bottom', image: images.bottom },
 
-  { name: 'Earring', image: images.earring, alt: [images.earring_0, null] },
+  { name: 'Earring', image: images.earring, alt: [images.earring_meso, images.earring_drop] },
   { name: 'Shoulder', image: images.shoulder },
   { name: 'Glove', image: images.glove },
   { name: 'Cape', image: images.cape },
@@ -142,6 +142,7 @@ const Home: NextPage = () => {
                 loader={({ src, quality }) => `${src}?q=${quality || 100}`}
                 placeholder="blur"
                 priority={true}
+                className="rounded-lg contrast-150 brightness-90"
               />
             )}
           </li>
