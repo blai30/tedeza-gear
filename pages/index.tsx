@@ -1,48 +1,10 @@
 import type { NextPage } from 'next'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { format, formatDistanceToNow } from 'date-fns'
 import { Octokit } from 'octokit'
-import { images } from '../public/img'
 import { RadioGroup } from '@headlessui/react'
-
-interface Equip {
-  name: string
-  image: StaticImageData
-  alt?: [StaticImageData | null, StaticImageData | null]
-}
-
-// prettier-ignore
-const equips: Equip[] = [
-  { name: 'Ring 4', image: images.ring4, alt: [null, images.ring4_drop] },
-  { name: 'Ring 3', image: images.ring3, alt: [images.ring3_meso, images.ring3_drop] },
-  { name: 'Ring 2', image: images.ring2, alt: [images.ring2_meso, images.ring2_drop] },
-  { name: 'Ring 1', image: images.ring1, alt: [images.ring1_meso, images.ring1_drop] },
-  { name: 'Pocket', image: images.pocket },
-
-  { name: 'Pendant 2', image: images.pendant2, alt: [null, images.pendant2_drop] },
-  { name: 'Pendant 1', image: images.pendant1, alt: [null, images.pendant1_drop] },
-  { name: 'Weapon', image: images.weapon },
-  { name: 'Belt', image: images.belt },
-  { name: 'Medal', image: images.medal },
-
-  { name: 'Hat', image: images.hat },
-  { name: 'Face', image: images.face, alt: [images.face_meso, images.face_drop] },
-  { name: 'Eye', image: images.eye, alt: [null, images.eye_drop] },
-  { name: 'Top', image: images.top },
-  { name: 'Bottom', image: images.bottom },
-
-  { name: 'Earring', image: images.earring, alt: [images.earring_meso, images.earring_drop] },
-  { name: 'Shoulder', image: images.shoulder },
-  { name: 'Glove', image: images.glove },
-  { name: 'Cape', image: images.cape },
-  { name: 'Shoe', image: images.shoe },
-
-  { name: 'Emblem', image: images.emblem },
-  { name: 'Badge', image: images.badge },
-  { name: 'Secondary', image: images.secondary },
-  { name: 'Heart', image: images.heart },
-]
+import { equips } from '../data'
 
 const presetOptions: { name: string; index: number }[] = [
   { name: 'Default', index: 0 },
@@ -50,7 +12,7 @@ const presetOptions: { name: string; index: number }[] = [
   { name: 'Item Drop Rate', index: 2 },
 ]
 
-function classNames(...classes: string[]) {
+const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -120,12 +82,26 @@ const Home: NextPage = () => {
                 : preset.index === 2 && equip.alt && equip.alt[1]
                 ? 'bg-green-400/40 dark:bg-green-600/30'
                 : '',
-              'flex flex-col gap-6 rounded-xl px-5 py-4 transition-colors'
+              'flex flex-col gap-5 rounded-xl px-5 py-4 transition-colors'
             )}
           >
-            <p className="text-center text-xl font-medium text-black dark:text-white">
-              {equip.name}
-            </p>
+            <div className="flex flex-col gap-2">
+              <p className="text-center text-xl font-medium text-black dark:text-white">
+                {equip.name}
+              </p>
+              <div className="flex flex-row items-center justify-center gap-4">
+                <p className="flex-1 text-right font-bold text-yellow-700 dark:text-yellow-300">
+                  {equip.stars[preset.index]
+                    ? equip.stars[preset.index] + ' ★'
+                    : '—'}
+                </p>
+                <p className="flex-1 text-left font-bold text-lime-700 dark:text-lime-300">
+                  {equip.potential[preset.index]
+                    ? equip.potential[preset.index] + ' %'
+                    : '—'}
+                </p>
+              </div>
+            </div>
             {equip.image && (
               <Image
                 src={
@@ -142,7 +118,7 @@ const Home: NextPage = () => {
                 loader={({ src, quality }) => `${src}?q=${quality || 100}`}
                 placeholder="blur"
                 priority={true}
-                className="rounded-lg contrast-150 brightness-90"
+                className="rounded-lg brightness-90 contrast-150"
               />
             )}
           </li>
