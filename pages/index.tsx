@@ -91,12 +91,14 @@ const Home: NextPage = () => {
               </p>
               <div className="flex flex-row items-center justify-center gap-4">
                 <p className="flex-1 text-right font-bold text-yellow-700 dark:text-yellow-300">
-                  {equip.stars[preset.index]
+                  {equip.stars[preset.index] !== null
                     ? equip.stars[preset.index] + ' ★'
+                    : equip.stars[0] !== null
+                    ? equip.stars[0] + ' ★'
                     : '—'}
                 </p>
                 <p className="flex-1 text-left font-bold text-lime-700 dark:text-lime-300">
-                  {equip.potential[preset.index]
+                  {equip.potential[preset.index] !== null
                     ? equip.potential[preset.index] + ' %'
                     : '—'}
                 </p>
