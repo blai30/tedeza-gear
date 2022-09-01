@@ -113,14 +113,14 @@ export const equips: Equip[] = [
   {
     name: 'Earring',
     stars: [18, 16, 12],
-    potential: [6, 20, 20],
+    potential: [18, 20, 20],
     image: images.earring,
     alt: [images.earring_meso, images.earring_drop],
   },
   {
     name: 'Shoulder',
     stars: [17, null, null],
-    potential: [24, null, null],
+    potential: [33, null, null],
     image: images.shoulder,
     alt: [null, null],
   },
