@@ -1,3 +1,5 @@
+export * as sprites from './sprites'
+
 export * as ring1 from './ring1.png'
 export * as ring2 from './ring2.png'
 export * as ring3 from './ring3.png'
@@ -29,7 +31,6 @@ export * as heart from './heart.png'
 
 export * as ring1_meso from './ring1_meso.png'
 export * as ring1_drop from './ring1_drop.png'
-export * as ring2_meso from './ring2_meso.png'
 export * as ring2_drop from './ring2_drop.png'
 export * as ring3_meso from './ring3_meso.png'
 export * as ring3_drop from './ring3_drop.png'

@@ -39,6 +39,9 @@ const Home: NextPage = () => {
 
   return (
     <main className="container mx-auto flex flex-col items-center gap-8 py-12">
+      {/* <Link href="about">
+        <span className="text-black dark:text-white">About</span>
+      </Link> */}
       <div className="space-y-2">
         <h3 className="text-center text-2xl font-bold text-neutral-600 dark:text-neutral-300">
           Updated {updatedDate ? formatDistanceToNow(updatedDate) : '...'} ago
