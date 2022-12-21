@@ -19,14 +19,14 @@ export const equips: Equip[] = [
   {
     name: 'Ring 2',
     stars: [21, null, 17],
-    potential: [21, null, 20],
+    potential: [27, null, 20],
     image: images.ring2,
     alt: [null, images.ring2_drop],
   },
   {
     name: 'Ring 1',
     stars: [17, 0, 10],
-    potential: [23, 20, 20],
+    potential: [27, 20, 20],
     image: images.ring1,
     alt: [images.ring1_meso, images.ring1_drop],
   },
@@ -61,7 +61,7 @@ export const equips: Equip[] = [
   },
   {
     name: 'Belt',
-    stars: [17, null, null],
+    stars: [18, null, null],
     potential: [21, null, null],
     image: images.belt,
     alt: [null, null],
@@ -84,7 +84,7 @@ export const equips: Equip[] = [
   {
     name: 'Face',
     stars: [17, 17, 10],
-    potential: [18, 20, 20],
+    potential: [27, 20, 20],
     image: images.face,
     alt: [images.face_meso, images.face_drop],
   },
@@ -104,7 +104,7 @@ export const equips: Equip[] = [
   },
   {
     name: 'Bottom',
-    stars: [18, null, null],
+    stars: [19, null, null],
     potential: [21, null, null],
     image: images.bottom,
     alt: [null, null],
@@ -112,7 +112,7 @@ export const equips: Equip[] = [
 
   {
     name: 'Earring',
-    stars: [18, 17, 12],
+    stars: [18, 17, 17],
     potential: [21, 20, 20],
     image: images.earring,
     alt: [images.earring_meso, images.earring_drop],
@@ -120,14 +120,14 @@ export const equips: Equip[] = [
   {
     name: 'Shoulder',
     stars: [17, null, null],
-    potential: [33, null, null],
+    potential: [23, null, null],
     image: images.shoulder,
     alt: [null, null],
   },
   {
     name: 'Glove',
     stars: [17, null, null],
-    potential: [10, null, null],
+    potential: [17, null, null],
     image: images.glove,
     alt: [null, null],
   },
@@ -163,7 +163,7 @@ export const equips: Equip[] = [
   {
     name: 'Secondary',
     stars: [18, null, null],
-    potential: [20, null, null],
+    potential: [13, null, null],
     image: images.secondary,
     alt: [null, null],
   },
