@@ -123,7 +123,7 @@ const Home: NextPage = () => {
                 loader={({ src, quality }) => `${src}?q=${quality || 100}`}
                 placeholder="blur"
                 priority={true}
-                className="rounded-lg brightness-90 contrast-150"
+                className="rounded-lg"
               />
             )}
           </li>

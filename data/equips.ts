@@ -18,14 +18,14 @@ export const equips: Equip[] = [
   },
   {
     name: 'Ring 2',
-    stars: [21, null, 0],
+    stars: [17, null, 0],
     potential: [27, null, 20],
     image: images.ring2,
     alt: [null, images.ring2_drop],
   },
   {
     name: 'Ring 1',
-    stars: [17, null, 17],
+    stars: [21, null, 17],
     potential: [27, null, 40],
     image: images.ring1,
     alt: [null, images.ring1_drop],
