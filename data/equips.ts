@@ -83,7 +83,7 @@ export const equips: Equip[] = [
   },
   {
     name: 'Face',
-    stars: [17, 17, 10],
+    stars: [17, 17, 17],
     potential: [27, 20, 20],
     image: images.face,
     alt: [images.face_meso, images.face_drop],
