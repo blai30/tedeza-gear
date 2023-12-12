@@ -65,7 +65,7 @@ const Home: NextPage = () => {
                   checked
                     ? 'bg-neutral-700 text-white dark:bg-neutral-300 dark:text-black'
                     : 'border-gray-200 bg-white text-gray-900 hover:bg-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:text-gray-100 dark:hover:bg-neutral-700',
-                  'flex select-none items-center justify-center border py-3 px-6 text-sm font-medium uppercase transition first:rounded-t-md first:border-b-0 last:rounded-b-md last:border-t-0 sm:flex-1 sm:first:rounded-l-md sm:first:rounded-r-none sm:first:border-r-0 sm:first:border-b sm:last:rounded-r-md sm:last:rounded-l-none sm:last:border-l-0 sm:last:border-t'
+                  'flex select-none items-center justify-center border px-6 py-3 text-sm font-medium uppercase transition first:rounded-t-md first:border-b-0 last:rounded-b-md last:border-t-0 sm:flex-1 sm:first:rounded-l-md sm:first:rounded-r-none sm:first:border-b sm:first:border-r-0 sm:last:rounded-l-none sm:last:rounded-r-md sm:last:border-l-0 sm:last:border-t'
                 )
               }
             >
@@ -93,14 +93,14 @@ const Home: NextPage = () => {
                 {equip.name}
               </p>
               <div className="flex flex-row items-center justify-center gap-4">
-                <p className="flex-1 text-right font-bold text-yellow-700 dark:text-yellow-300">
+                <p className="flex-1 text-right font-bold text-yellow-700 subpixel-antialiased dark:text-yellow-300">
                   {equip.stars[preset.index] !== null
                     ? equip.stars[preset.index] + ' ★'
                     : equip.stars[0] !== null
                     ? equip.stars[0] + ' ★'
                     : '—'}
                 </p>
-                <p className="flex-1 text-left font-bold text-lime-700 dark:text-lime-300">
+                <p className="flex-1 text-left font-bold text-lime-700 subpixel-antialiased dark:text-lime-300">
                   {equip.potential[preset.index] !== null
                     ? equip.potential[preset.index] + ' %'
                     : '—'}
@@ -119,7 +119,6 @@ const Home: NextPage = () => {
                     : equip.image
                 }
                 alt={equip.name}
-                layout="fixed"
                 loader={({ src, quality }) => `${src}?q=${quality || 100}`}
                 placeholder="blur"
                 priority={true}

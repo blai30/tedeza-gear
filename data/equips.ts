@@ -41,7 +41,7 @@ export const equips: Equip[] = [
   {
     name: 'Pendant 2',
     stars: [21, null, 15],
-    potential: [23, null, 20],
+    potential: [24, null, 20],
     image: images.pendant2,
     alt: [null, images.pendant2_drop],
   },
@@ -62,7 +62,7 @@ export const equips: Equip[] = [
   {
     name: 'Belt',
     stars: [21, null, null],
-    potential: [21, null, null],
+    potential: [24, null, null],
     image: images.belt,
     alt: [null, null],
   },
@@ -98,14 +98,14 @@ export const equips: Equip[] = [
   {
     name: 'Top',
     stars: [22, null, null],
-    potential: [21, null, null],
+    potential: [24, null, null],
     image: images.top,
     alt: [null, null],
   },
   {
     name: 'Bottom',
     stars: [22, null, null],
-    potential: [21, null, null],
+    potential: [30, null, null],
     image: images.bottom,
     alt: [null, null],
   },
@@ -141,7 +141,7 @@ export const equips: Equip[] = [
   {
     name: 'Shoe',
     stars: [17, null, null],
-    potential: [23, null, null],
+    potential: [30, null, null],
     image: images.shoe,
     alt: [null, null],
   },
