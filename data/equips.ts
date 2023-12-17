@@ -11,7 +11,7 @@ export const equips: Equip[] = [
   },
   {
     name: 'Ring 3',
-    stars: [18, 0, 0],
+    stars: [19, 0, 0],
     potential: [21, 20, 20],
     image: images.ring3,
     alt: [images.ring3_meso, images.ring3_drop],
@@ -40,14 +40,14 @@ export const equips: Equip[] = [
 
   {
     name: 'Pendant 2',
-    stars: [21, null, 15],
+    stars: [22, null, 15],
     potential: [24, null, 20],
     image: images.pendant2,
     alt: [null, images.pendant2_drop],
   },
   {
     name: 'Pendant 1',
-    stars: [21, null, 5],
+    stars: [22, null, 5],
     potential: [27, null, 20],
     image: images.pendant1,
     alt: [null, images.pendant1_drop],
@@ -61,7 +61,7 @@ export const equips: Equip[] = [
   },
   {
     name: 'Belt',
-    stars: [21, null, null],
+    stars: [22, null, null],
     potential: [24, null, null],
     image: images.belt,
     alt: [null, null],
