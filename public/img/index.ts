@@ -1,5 +1,3 @@
-export * as sprites from './sprites'
-
 export * as ring1 from './ring1.png'
 export * as ring2 from './ring2.png'
 export * as ring3 from './ring3.png'
