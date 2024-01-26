@@ -134,7 +134,7 @@ export const equips: Equip[] = [
   {
     name: 'Cape',
     stars: [21, null, null],
-    potential: [27, null, null],
+    potential: [33, null, null],
     image: images.cape,
     alt: [null, null],
   },
