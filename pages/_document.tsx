@@ -58,6 +58,8 @@ class MyDocument extends Document {
             type="text/css"
             href="https://rsms.me/inter/inter.css"
           />
+
+          <link rel="icon" href="favicon.png" type="image/png" />
         </Head>
         <body className="bg-neutral-100 subpixel-antialiased transition-colors dark:bg-neutral-900">
           <Main />

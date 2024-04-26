@@ -12,6 +12,11 @@ const presetOptions: { name: string; index: number }[] = [
   { name: 'Item Drop Rate', index: 2 },
 ]
 
+const ringColors = (ringName: string) => ({
+  ['Ring of Restraint']: 'bg-rose-700/60',
+  ['Weapon Jump L Ring']: 'bg-yellow-700/60',
+})[ringName] ?? 'bg-zinc-700/60'
+
 const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ')
 }
@@ -79,7 +84,7 @@ const Home: NextPage = () => {
         {skillRings.map((ring) => (
           <div
             key={ring.name}
-            className="flex w-72 flex-row items-center gap-4 rounded-lg bg-zinc-700 p-4"
+            className={classNames('flex w-72 flex-row items-center gap-4 rounded-lg p-4', ringColors(ring.name))}
           >
             <Image
               src={ring.image}

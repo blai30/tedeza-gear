@@ -6,11 +6,13 @@ export const skillRings: SkillRing[] = [
     name: 'Ring of Restraint',
     level: 4,
     image: images.skillring1,
+    color: 'bg-rose-700',
   },
   {
     name: 'Weapon Jump L Ring',
     level: 3,
     image: images.skillring2,
+    color: 'bg-yellow-700',
   }
 ]
 
