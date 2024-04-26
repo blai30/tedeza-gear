@@ -1,5 +1,18 @@
-import { Equip } from '../models'
+import { Equip, SkillRing } from '../models'
 import * as images from '../public/img'
+
+export const skillRings: SkillRing[] = [
+  {
+    name: 'Ring of Restraint',
+    level: 4,
+    image: images.skillring1,
+  },
+  {
+    name: 'Weapon Jump L Ring',
+    level: 3,
+    image: images.skillring2,
+  }
+]
 
 export const equips: Equip[] = [
   {

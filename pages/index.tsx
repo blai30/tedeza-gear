@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { format, formatDistanceToNow } from 'date-fns'
 import { Octokit } from 'octokit'
 import { RadioGroup } from '@headlessui/react'
-import { equips } from '../data'
+import { equips, skillRings } from '../data'
 
 const presetOptions: { name: string; index: number }[] = [
   { name: 'Default', index: 0 },
@@ -75,7 +75,33 @@ const Home: NextPage = () => {
         </div>
       </RadioGroup>
 
-      <ul className="2xl: flex flex-col flex-wrap justify-center gap-2 align-top md:grid-flow-col md:flex-row 2xl:grid 2xl:grid-cols-4 2xl:grid-rows-5">
+      <div className="mt-6 flex flex-col flex-wrap justify-center gap-6 align-top md:grid-flow-col md:flex-row">
+        {skillRings.map((ring) => (
+          <div
+            key={ring.name}
+            className="flex w-72 flex-row items-center gap-4 rounded-lg bg-zinc-700 p-4"
+          >
+            <Image
+              src={ring.image}
+              alt={ring.name}
+              loader={({ src, quality }) => `${src}?q=${quality || 100}`}
+              placeholder="blur"
+              priority={true}
+              className="rounded-lg"
+            />
+            <div className="flex flex-col items-start gap-2">
+              <h2 className="text-center text-black dark:text-white">
+                {ring.name}
+              </h2>
+              <h2 className="text-center text-black dark:text-white">
+                Level {ring.level}
+              </h2>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <ul className="flex flex-col flex-wrap justify-center gap-2 align-top md:grid-flow-col md:flex-row 2xl:grid 2xl:grid-cols-4 2xl:grid-rows-5">
         {equips.map((equip) => (
           <li
             key={equip.name}
