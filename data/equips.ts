@@ -77,7 +77,7 @@ export const equips: Equip[] = [
   {
     name: 'Belt',
     stars: [22, null, null],
-    potential: [24, null, null],
+    potential: [30, null, null],
     image: images.belt,
     alt: [null, null],
   },
@@ -113,7 +113,7 @@ export const equips: Equip[] = [
   {
     name: 'Top',
     stars: [22, null, null],
-    potential: [24, null, null],
+    potential: [27, null, null],
     image: images.top,
     alt: [null, null],
   },
@@ -135,7 +135,7 @@ export const equips: Equip[] = [
   {
     name: 'Shoulder',
     stars: [22, null, null],
-    potential: [30, null, null],
+    potential: [33, null, null],
     image: images.shoulder,
     alt: [null, null],
   },
@@ -156,7 +156,7 @@ export const equips: Equip[] = [
   {
     name: 'Shoe',
     stars: [22, null, null],
-    potential: [30, null, null],
+    potential: [33, null, null],
     image: images.shoe,
     alt: [null, null],
   },
@@ -164,7 +164,7 @@ export const equips: Equip[] = [
   {
     name: 'Emblem',
     stars: [null, null, null],
-    potential: [23, null, null],
+    potential: [33, null, null],
     image: images.emblem,
     alt: [null, null],
   },
@@ -178,7 +178,7 @@ export const equips: Equip[] = [
   {
     name: 'Secondary',
     stars: [22, null, null],
-    potential: [20, null, null],
+    potential: [33, null, null],
     image: images.secondary,
     alt: [null, null],
   },
