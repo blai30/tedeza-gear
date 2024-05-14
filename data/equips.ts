@@ -63,7 +63,7 @@ export const equips: Equip[] = [
   {
     name: 'Pendant 1',
     stars: [22, null, 5],
-    potential: [27, null, 20],
+    potential: [33, null, 20],
     image: images.pendant1,
     alt: [null, images.pendant1_drop],
   },
