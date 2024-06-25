@@ -69,7 +69,7 @@ export const equips: Equip[] = [
   },
   {
     name: 'Weapon',
-    stars: [18, null, null],
+    stars: [17, null, null],
     potential: [20, null, null],
     image: images.weapon,
     alt: [null, null],
