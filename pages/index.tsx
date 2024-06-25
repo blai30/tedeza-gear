@@ -12,10 +12,12 @@ const presetOptions: { name: string; index: number }[] = [
   { name: 'Item Drop Rate', index: 2 },
 ]
 
-const ringColors = (ringName: string) => ({
-  ['Ring of Restraint']: 'bg-rose-700/60',
-  ['Weapon Jump L Ring']: 'bg-yellow-700/60',
-})[ringName] ?? 'bg-zinc-700/60'
+const ringColors = (ringName: string) =>
+  ({
+    ['Ring of Restraint']: 'bg-rose-700/60',
+    ['Continuous Ring']: 'bg-orange-700/60',
+    ['Weapon Jump L Ring']: 'bg-yellow-700/60',
+  }[ringName] ?? 'bg-zinc-700/60')
 
 const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ')
@@ -80,85 +82,90 @@ const Home: NextPage = () => {
         </div>
       </RadioGroup>
 
-      <div className="mt-6 flex flex-col flex-wrap justify-center gap-6 align-top md:grid-flow-col md:flex-row">
-        {skillRings.map((ring) => (
-          <div
-            key={ring.name}
-            className={classNames('flex w-72 flex-row items-center gap-4 rounded-lg p-4', ringColors(ring.name))}
-          >
-            <Image
-              src={ring.image}
-              alt={ring.name}
-              loader={({ src, quality }) => `${src}?q=${quality || 100}`}
-              placeholder="blur"
-              priority={true}
-              className="rounded-lg"
-            />
-            <div className="flex flex-col items-start gap-2">
-              <h2 className="text-center text-black dark:text-white">
-                {ring.name}
-              </h2>
-              <h2 className="text-center text-black dark:text-white">
-                Level {ring.level}
-              </h2>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <ul className="flex flex-col flex-wrap justify-center gap-2 align-top md:grid-flow-col md:flex-row 2xl:grid 2xl:grid-cols-4 2xl:grid-rows-5">
-        {equips.map((equip) => (
-          <li
-            key={equip.name}
-            className={classNames(
-              preset.index === 1 && equip.alt && equip.alt[0]
-                ? 'bg-yellow-400/40 dark:bg-yellow-600/30'
-                : preset.index === 2 && equip.alt && equip.alt[1]
-                ? 'bg-green-400/40 dark:bg-green-600/30'
-                : '',
-              'flex flex-col gap-5 rounded-xl px-5 py-4 transition-colors'
-            )}
-          >
-            <div className="flex flex-col gap-2">
-              <p className="text-center text-xl font-medium text-black dark:text-white">
-                {equip.name}
-              </p>
-              <div className="flex flex-row items-center justify-center gap-4">
-                <p className="flex-1 text-right font-bold text-yellow-700 subpixel-antialiased dark:text-yellow-300">
-                  {equip.stars[preset.index] !== null
-                    ? equip.stars[preset.index] + ' ★'
-                    : equip.stars[0] !== null
-                    ? equip.stars[0] + ' ★'
-                    : '—'}
-                </p>
-                <p className="flex-1 text-left font-bold text-lime-700 subpixel-antialiased dark:text-lime-300">
-                  {equip.potential[preset.index] !== null
-                    ? equip.potential[preset.index] + ' %'
-                    : '—'}
-                </p>
-              </div>
-            </div>
-            {equip.image && (
+      <div id="equipment" className="flex flex-col items-center gap-8">
+        <ul className="mt-6 flex flex-col flex-wrap justify-center gap-6 align-top md:grid-flow-col md:flex-row">
+          {skillRings.map((ring) => (
+            <li
+              key={ring.name}
+              className={classNames(
+                'flex w-72 flex-row items-center gap-4 rounded-xl p-2',
+                ringColors(ring.name)
+              )}
+            >
               <Image
-                src={
-                  preset.index === 0
-                    ? equip.image
-                    : preset.index === 1 && equip.alt && equip.alt[0]
-                    ? equip.alt[0]
-                    : preset.index === 2 && equip.alt && equip.alt[1]
-                    ? equip.alt[1]
-                    : equip.image
-                }
-                alt={equip.name}
+                src={ring.image}
+                alt={ring.name}
                 loader={({ src, quality }) => `${src}?q=${quality || 100}`}
                 placeholder="blur"
                 priority={true}
-                className="rounded-lg"
+                className="rounded-md"
               />
-            )}
-          </li>
-        ))}
-      </ul>
+              <div className="flex flex-col items-start gap-2">
+                <h2 className="text-center text-black dark:text-white">
+                  {ring.name}
+                </h2>
+                <h2 className="text-center text-black dark:text-white">
+                  Level {ring.level}
+                </h2>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <ul className="flex flex-col flex-wrap justify-center gap-2 align-top md:grid-flow-col md:flex-row 2xl:grid 2xl:grid-cols-4 2xl:grid-rows-5">
+          {equips.map((equip) => (
+            <li
+              key={equip.name}
+              className={classNames(
+                preset.index === 1 && equip.alt && equip.alt[0]
+                  ? 'bg-yellow-400/40 dark:bg-yellow-600/30'
+                  : preset.index === 2 && equip.alt && equip.alt[1]
+                  ? 'bg-green-400/40 dark:bg-green-600/30'
+                  : '',
+                'flex flex-col gap-5 rounded-xl px-5 py-4 transition-colors'
+              )}
+            >
+              <div className="flex flex-col gap-2">
+                <p className="text-center text-xl font-medium text-black dark:text-white">
+                  {equip.name}
+                </p>
+                <div className="flex flex-row items-center justify-center gap-4">
+                  <p className="flex-1 text-right font-bold text-yellow-700 subpixel-antialiased dark:text-yellow-300">
+                    {equip.stars[preset.index] !== null
+                      ? equip.stars[preset.index] + ' ★'
+                      : equip.stars[0] !== null
+                      ? equip.stars[0] + ' ★'
+                      : '—'}
+                  </p>
+                  <p className="flex-1 text-left font-bold text-lime-700 subpixel-antialiased dark:text-lime-300">
+                    {equip.potential[preset.index] !== null
+                      ? equip.potential[preset.index] + ' %'
+                      : '—'}
+                  </p>
+                </div>
+              </div>
+              {equip.image && (
+                <Image
+                  src={
+                    preset.index === 0
+                      ? equip.image
+                      : preset.index === 1 && equip.alt && equip.alt[0]
+                      ? equip.alt[0]
+                      : preset.index === 2 && equip.alt && equip.alt[1]
+                      ? equip.alt[1]
+                      : equip.image
+                  }
+                  alt={equip.name}
+                  loader={({ src, quality }) => `${src}?q=${quality || 100}`}
+                  placeholder="blur"
+                  priority={true}
+                  className="rounded-lg"
+                />
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </main>
   )
 }

@@ -1,5 +1,6 @@
 export * as skillring1 from './skillring1.png'
 export * as skillring2 from './skillring2.png'
+export * as skillring3 from './skillring3.png'
 
 export * as ring1 from './ring1.png'
 export * as ring2 from './ring2.png'
