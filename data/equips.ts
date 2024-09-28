@@ -16,7 +16,7 @@ export const skillRings: SkillRing[] = [
   },
   {
     name: 'Weapon Jump L Ring',
-    level: 3,
+    level: 4,
     image: images.skillring3,
     color: 'bg-yellow-700',
   }
@@ -25,31 +25,31 @@ export const skillRings: SkillRing[] = [
 export const equips: Equip[] = [
   {
     name: 'Ring 4',
-    stars: [22, 0, 15],
-    potential: [27, 20, 20],
+    stars: [22, 17, 17],
+    potential: [30, 0, 20],
     image: images.ring4,
     alt: [images.ring4_meso, images.ring4_drop],
   },
   {
     name: 'Ring 3',
-    stars: [22, 0, 0],
-    potential: [30, 20, 20],
+    stars: [22, 22, 17],
+    potential: [30, 20, 40],
     image: images.ring3,
     alt: [images.ring3_meso, images.ring3_drop],
   },
   {
     name: 'Ring 2',
-    stars: [22, null, 0],
-    potential: [30, null, 20],
+    stars: [22, 0, 0],
+    potential: [30, 20, 20],
     image: images.ring2,
-    alt: [null, images.ring2_drop],
+    alt: [images.ring2_meso, images.ring2_drop],
   },
   {
     name: 'Ring 1',
-    stars: [22, null, 17],
-    potential: [27, null, 40],
+    stars: [12, 0, 0],
+    potential: [33, 20, 20],
     image: images.ring1,
-    alt: [null, images.ring1_drop],
+    alt: [images.ring1_meso, images.ring1_drop],
   },
   {
     name: 'Pocket',
@@ -61,22 +61,22 @@ export const equips: Equip[] = [
 
   {
     name: 'Pendant 2',
-    stars: [22, null, 15],
-    potential: [33, null, 20],
+    stars: [22, 22, 22],
+    potential: [33, 20, 20],
     image: images.pendant2,
-    alt: [null, images.pendant2_drop],
+    alt: [images.pendant2_meso, images.pendant2_drop],
   },
   {
     name: 'Pendant 1',
-    stars: [22, null, 5],
-    potential: [33, null, 20],
+    stars: [22, 5, 5],
+    potential: [33, 0, 20],
     image: images.pendant1,
-    alt: [null, images.pendant1_drop],
+    alt: [images.pendant1_meso, images.pendant1_drop],
   },
   {
     name: 'Weapon',
-    stars: [17, null, null],
-    potential: [20, null, null],
+    stars: [22, null, null],
+    potential: [33, null, null],
     image: images.weapon,
     alt: [null, null],
   },
@@ -104,7 +104,7 @@ export const equips: Equip[] = [
   },
   {
     name: 'Face',
-    stars: [22, 17, 17],
+    stars: [22, 22, 22],
     potential: [27, 20, 20],
     image: images.face,
     alt: [images.face_meso, images.face_drop],
@@ -112,7 +112,7 @@ export const equips: Equip[] = [
   {
     name: 'Eye',
     stars: [22, 17, 17],
-    potential: [30, 20, 20],
+    potential: [30, 0, 40],
     image: images.eye,
     alt: [images.eye_meso, images.eye_drop],
   },
@@ -134,7 +134,7 @@ export const equips: Equip[] = [
   {
     name: 'Earring',
     stars: [22, 17, 17],
-    potential: [27, 20, 20],
+    potential: [30, 0, 40],
     image: images.earring,
     alt: [images.earring_meso, images.earring_drop],
   },
