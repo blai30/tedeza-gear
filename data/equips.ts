@@ -147,10 +147,10 @@ export const equips: Equip[] = [
   },
   {
     name: 'Glove',
-    stars: [22, null, null],
-    potential: [10, null, null],
+    stars: [22, null, 17],
+    potential: [10, null, 9],
     image: images.glove,
-    alt: [null, null],
+    alt: [null, images.glove_drop],
   },
   {
     name: 'Cape',
