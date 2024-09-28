@@ -140,6 +140,8 @@ const Home: NextPage = () => {
                   <p className="flex-1 text-left font-bold text-lime-700 subpixel-antialiased dark:text-lime-300">
                     {equip.potential[preset.index] !== null
                       ? equip.potential[preset.index] + ' %'
+                      : equip.potential[0] !== null
+                      ? equip.potential[0] + ' %'
                       : '—'}
                   </p>
                 </div>
