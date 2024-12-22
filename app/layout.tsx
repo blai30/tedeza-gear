@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono, Inter } from 'next/font/google'
 import './globals.css'
 
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://tedeza-gear.vercel.app/',
+    images: ['favicon.png'],
   },
   twitter: {
     card: 'summary',
@@ -34,6 +35,11 @@ export const metadata: Metadata = {
       url: 'https://github.com/blai30',
     },
   ],
+}
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+  themeColor: '#e11d48',
 }
 
 export default function RootLayout({
